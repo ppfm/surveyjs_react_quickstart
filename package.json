@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
     "bootstrap": "^3.3.7",
     "jquery": "^3.3.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "1.1.4",
-    "survey-react": "latest",
     "survey-creator": "latest",
-    "surveyjs-widgets": "latest",
-    "survey-pdf": "latest"
+    "survey-pdf": "latest",
+    "survey-react": "latest",
+    "surveyjs-widgets": "latest"
   },
   "scripts": {
     "start": "react-scripts start",

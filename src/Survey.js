@@ -49,7 +49,6 @@ function onComplete(result) {
     console.log("Complete! " + result);
 }
 
-
 export function SurveyPage() {
     var model = new Survey.Model(json);
     return (

@@ -1,5 +1,6 @@
 import React from "react";
 import * as Survey from "survey-react";
+import TextField from '@material-ui/core/TextField';
 
 export class MyQuestionModel extends Survey.Question {
   getType() {
@@ -20,11 +21,8 @@ export class MyQuestion extends Survey.SurveyElementBase {
   }
   render() {
     if (!this.question) return null;
-    var cssClasses = this.question.cssClasses;
     return (
-      <div className={cssClasses.root}>
-        <span>My Text Value: </span><span><b>{this.question.text}</b></span>
-      </div>
+      <TextField variant="outlined" id="standard-basic" label="Standard" defaultValue={this.question.text} />
     );
   }
 }
