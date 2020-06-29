@@ -17,6 +17,9 @@ import "jquery-bar-rating";
 
 import "pretty-checkbox/dist/pretty-checkbox.css";
 
+// import CustomQuestionType from  "./components/CustomQuestionType";
+
+
 import { json } from "./survey_json.js";
 
 //import "icheck/skins/square/blue.css";
@@ -39,7 +42,8 @@ widgets.select2tagbox(Survey, $);
 widgets.sortablejs(Survey);
 widgets.ckeditor(Survey);
 widgets.autocomplete(Survey, $);
-widgets.bootstrapslider(Survey);
+// widgets.bootstrapslider(Survey);
+// CustomQuestionType(Survey);
 
 function onValueChanged(result) {
     console.log("value changed!");
