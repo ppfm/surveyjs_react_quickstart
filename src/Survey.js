@@ -13,7 +13,9 @@ import "select2/dist/js/select2.js";
 import "jquery-bar-rating";
 import "pretty-checkbox/dist/pretty-checkbox.css";
 import { json } from "./survey_json.js";
-export { MyQuestion } from "./MyQuestion";
+import testwidget from "./components/testwidget";
+
+// export { MyQuestion } from "./MyQuestion";
 
 //import "icheck/skins/square/blue.css";
 window["$"] = window["jQuery"] = $;
@@ -36,6 +38,8 @@ widgets.ckeditor(Survey);
 widgets.autocomplete(Survey, $);
 // widgets.bootstrapslider(Survey);
 // CustomQuestionType(Survey);
+testwidget(Survey);
+
 
 function onValueChanged(result) {
     console.log("value changed!");

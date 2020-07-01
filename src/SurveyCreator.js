@@ -15,8 +15,16 @@ import "select2/dist/js/select2.js";
 import "jquery-bar-rating";
 //import "icheck/skins/square/blue.css";
 import "pretty-checkbox/dist/pretty-checkbox.css";
-import testwidget from "./components/testwidget";
+// import testwidget from "./components/testwidget";
 import * as widgets from "surveyjs-widgets";
+import TestMuiTextAreaWidget from "./components/TestMuiTextAreaWidget";
+import { Survey } from "survey-react";
+
+// import MyQuestion from "./MyQuestion";
+
+
+// export { MyQuestion } from "./MyQuestion";
+
 
 SurveyJSCreator.StylesManager.applyTheme("default");
 
@@ -32,11 +40,27 @@ SurveyJSCreator.StylesManager.applyTheme("default");
 // widgets.sortablejs(SurveyKo);
 // widgets.ckeditor(SurveyKo);
 // widgets.autocomplete(SurveyKo, $);
-widgets.bootstrapslider(SurveyKo);
-testwidget(SurveyKo);
+// widgets.bootstrapslider(SurveyKo);
+// testwidget(SurveyKo);
+// MyQuestion(SurveyKo);
+
+SurveyKo.CustomWidgetCollection.Instance.addCustomWidget({
+    name: "testwidget",
+    title: "Test Widget",
+    category: "customtype",
+
+    isDefaultRender: true,
+    widgetIsLoaded: function () {
+        return typeof $ == "function"; 
+    },
+    isFit: function (question) {
+        return question.getType() === "testwidget";
+    },
+    render:<TestMuiTextAreaWidget/>,
+    
+},"customtype");
 
 console.log(SurveyKo);
-
 
 class SurveyCreator extends Component {
   surveyCreator;

@@ -5,8 +5,8 @@ export var json = {
       {
         elements: [
           {
-            type: "myquestion",
-            name: "cq1",
+            type: "testwidget",
+            name: "Hi",
             text: "Some Text"
           },
           {

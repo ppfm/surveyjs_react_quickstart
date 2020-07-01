@@ -3,31 +3,35 @@ import TextField from '@material-ui/core/TextField';
 
 class CustomQuestionType extends Component {
     render() {
-        return  <TextField label="fff" variant="outlined" id="material-ui-textfield-01" />;
+        return <TextField label="fff" variant="outlined" id="material-ui-textfield-01" />;
     }
 }
 
-function init(Survey, $) {
-    $ = $ || window.$;
+function init(Survey) {
     var testWidget = {
         name: "testwidget",
         title: "Test Widget",
+        category: "customtype",
+
         isDefaultRender: true,
         widgetIsLoaded: function () {
-            return typeof $ == "function";
+            return typeof $ == "function"; 
         },
         isFit: function (question) {
-            return question.getType() == "text";
+            return question.getType() === "testwidget";
         },
-        isDefaultRender: true,
-        afterRender: () => <CustomQuestionType />,
+        htmlTemplate: () => <CustomQuestionType />,
+        
     }
 
-    Survey.CustomWidgetCollection.Instance.addCustomWidget(testWidget);
+    Survey.CustomWidgetCollection.Instance.addCustomWidget(testWidget, "customtype");
+
+    // if (typeof Survey !== "undefined") {
+    //     init(Survey);
+    // }
+
 }
 
-// if (typeof Survey !== "undefined") {
-//     init(Survey, window.$);
-// }
+
 
 export default init;
