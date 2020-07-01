@@ -2,31 +2,23 @@ import React from "react";
 import * as Survey from "survey-react";
 import * as widgets from "surveyjs-widgets";
 import "survey-react/survey.css";
-
 import "jquery-ui/themes/base/all.css";
 import "nouislider/distribute/nouislider.css";
 import "select2/dist/css/select2.css";
 import "bootstrap-slider/dist/css/bootstrap-slider.css";
-
 import "jquery-bar-rating/dist/themes/css-stars.css";
-
 import $ from "jquery";
 import "jquery-ui/ui/widgets/datepicker.js";
 import "select2/dist/js/select2.js";
 import "jquery-bar-rating";
-
 import "pretty-checkbox/dist/pretty-checkbox.css";
-
-// import CustomQuestionType from  "./components/CustomQuestionType";
-
-
 import { json } from "./survey_json.js";
+export { MyQuestion } from "./MyQuestion";
 
 //import "icheck/skins/square/blue.css";
 window["$"] = window["jQuery"] = $;
 //require("icheck");
 
-export { MyQuestion } from "./MyQuestion";
 
 Survey.StylesManager.applyTheme("default");
 
